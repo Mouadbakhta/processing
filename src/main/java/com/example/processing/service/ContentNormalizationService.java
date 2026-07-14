@@ -2,7 +2,9 @@ package com.example.processing.service;
 
 import com.example.processing.model.ProcessedFile;
 import com.example.processing.model.RawFile;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ContentNormalizationService {
     public   ProcessedFile normalize(RawFile rawFile){
 
