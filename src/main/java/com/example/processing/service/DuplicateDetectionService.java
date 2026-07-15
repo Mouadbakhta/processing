@@ -16,7 +16,9 @@ public class DuplicateDetectionService {
 
     private FileRepo repo ;
 
-
+    public DuplicateDetectionService(FileRepo repo) {
+        this.repo = repo;
+    }
 
 
     public ProcessedFile virefy(ProcessedFile file) throws NoSuchAlgorithmException {

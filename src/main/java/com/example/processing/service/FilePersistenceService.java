@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class FilePersistenceService {
     private FileRepo repo ;
+
+    public FilePersistenceService(FileRepo repo) {
+        this.repo = repo;
+    }
+
     public ProcessedFile save(ProcessedFile file){
         return repo.save(file);
     }

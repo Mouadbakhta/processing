@@ -19,6 +19,11 @@ import java.security.NoSuchAlgorithmException;
 @RequestMapping("/api")
 public class UploadController {
     private FileProcessingService process ;
+
+    public UploadController(FileProcessingService process) {
+        this.process = process;
+    }
+
     @PostMapping("/upload")
     public ResponseEntity<ProcessedFile> upload(@RequestPart("file") MultipartFile file) throws NoSuchAlgorithmException, IOException {
         if (file.isEmpty()){
@@ -27,8 +32,9 @@ public class UploadController {
         RawFile rawFile = new RawFile();
         rawFile.setFilename(file.getOriginalFilename());
         rawFile.setContent(new String(file.getBytes(), StandardCharsets.UTF_8));
+        ProcessedFile processedFile = process.process(rawFile);
 
-        return ResponseEntity.ok(process.process(rawFile));
+        return ResponseEntity.ok(processedFile);
     }
 
 }

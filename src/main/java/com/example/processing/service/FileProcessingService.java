@@ -2,9 +2,7 @@ package com.example.processing.service;
 
 import com.example.processing.model.ProcessedFile;
 import com.example.processing.model.RawFile;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
