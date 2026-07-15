@@ -24,7 +24,7 @@ public class DuplicateDetectionService {
     public ProcessedFile virefy(ProcessedFile file) throws NoSuchAlgorithmException {
         String hash = hashe(file.getNormalizedContent());
         if (repo.existsBySha256(hash)){
-            throw new RuntimeException("Duplicate file");
+            throw new RuntimeException("Duplicated file");
         }
         file.setSha256(hash);
         repo.save(file);

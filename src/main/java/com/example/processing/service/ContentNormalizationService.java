@@ -13,6 +13,8 @@ public class ContentNormalizationService {
         normalized = normalized
                 .replace("\r\n" , "\n")
                 .replace("\r","\n");
+        normalized = normalized.replace("$\r\n", "$").replace("$\n", "$");
+        normalized = normalized.replace("$$*EOF*$","$");
 
         normalized = normalized
                 .replace("\u0000", "")
