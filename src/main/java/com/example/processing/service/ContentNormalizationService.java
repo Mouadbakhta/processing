@@ -21,7 +21,11 @@ public class ContentNormalizationService {
 
         normalized = normalized.trim();
 
-        return new ProcessedFile(rawFile.getFilename(),normalized , "");
+        ProcessedFile file = new ProcessedFile();
+        file.setFilename(rawFile.getFilename());
+        file.setNormalizedContent(normalized);
+
+        return file;
     }
 
 }

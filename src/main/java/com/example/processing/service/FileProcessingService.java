@@ -17,7 +17,7 @@ public class FileProcessingService {
 
      public ProcessedFile process(RawFile file) throws NoSuchAlgorithmException {
          ProcessedFile processedFile = normalized.normalize(file);
-         processedFile = duplicate.vifrefy(processedFile);
+         processedFile = duplicate.virefy(processedFile);
 
          processedFile = persistence.save(processedFile);
 
